@@ -1,0 +1,603 @@
+@import "grids.css";
+
+@font-face {
+    font-family: yakan;
+    src: url('fonts/Yekan.woff') format('woof');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: roya;
+    src: url("fonts/RoyaR.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: roya;
+    src: url("fonts/RoyaB.woff") format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+body {
+    direction: rtl;
+    font-family: roya;
+    background: rgb(121, 124, 121);
+}
+
+*:focus {
+    outline: none;
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+#topmenu {
+    background-color: #fde200;
+    position: fixed;
+    width: 100%;
+    height: 54px;
+    z-index: 1;
+    font-family: roya;
+}
+
+#topmenu ul {
+    position: absolute;
+    width: 100%;
+    max-width: 1280px;
+    top: 100%;
+    background-color: #fce564;
+    border-top: 2px solid blue;
+    font-size: 20px;
+    display: none;
+    line-height: 250%;
+}
+
+#topmenu a {
+    color: black;
+    display: block;
+    padding-right: 30px;
+    border-bottom: 1px solid black;
+    transition: 0.3s;
+}
+
+#topmenu a:hover {
+    background-color: #ff9637;
+    color: white;
+}
+
+#button1 {
+    position: fixed;
+    left: 20px;
+    top: 10px;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#button1:hover, #button2:hover {
+    box-shadow: 0 0 3px darkblue;
+}
+
+#button2 {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#header {
+    font-family: roya;
+    padding-top: 54px;
+    background-color: hsla(215, 100%, 50%, .8);
+}
+
+#logo {
+    display: none;
+}
+
+#search {
+    text-align: center;
+    color: wheat;
+}
+
+#search h1 {
+    margin-top: 15px;
+    font-size: 40px;
+}
+
+#search input[type='search'] {
+    max-width: 350px;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#search input[type='submit'] {
+    width: 80px;
+    border: none;
+    background-color: #fde200;
+    height: 45px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: darkblue;
+}
+
+#search input[type='submit']:hover {
+    background-color: #ff9637;
+    color: white;
+}
+
+#cats {
+    position: fixed;
+    top: 54px;
+    bottom: 0;
+    width: 300px;
+    right: -300px;
+    background-color: #fde200;
+    line-height: 270%;
+    transition: 0.3s;
+    /*box-shadow: 0 0 5px red;*/
+    z-index: 1;
+    overflow: auto;
+}
+
+#cats a {
+    display: block;
+    color: black;
+    padding: 0 15px;
+    /*border-bottom: 1px solid black;*/
+}
+
+#cats a:hover {
+    background-color: #ff9637;
+}
+
+#cats .subMenu a {
+    padding-right: 30px;
+    font-size: 14px;
+}
+
+#cats .subMenu .subMenu a {
+    padding-right: 50px;
+}
+
+#cats .plus {
+    float: left;
+    font-size: 1.2em;
+    padding: 0 15px;
+}
+
+#cats .subMenu {
+    display: none;
+    background-color: yellow;
+}
+
+#cats .subMenu .subMenu {
+    background-color: #e9db37;
+}
+
+#content {
+    margin-top: 15px;
+}
+
+#content .group {
+    background-color: white;
+    box-shadow: 0 1px 2px #bbb;
+    margin-bottom: 30px;
+}
+
+#content .group h2 {
+    color: white;
+    background-color: #444444;
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    line-height: 240%;
+}
+
+#content article {
+    margin: 15px auto;
+    text-align: center;
+    max-width: 340px;
+    box-shadow: 0 0 0 1px #ccc;
+}
+
+#content article:hover {
+    box-shadow: 0 2px 2px 2px #57545b;
+}
+
+#content .image {
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+    padding: 15px;
+}
+
+#content .imageLabel {
+    background-color: red;
+    color: white;
+    width: 150px;
+    font-size: 20px;
+    opacity: 0.6;
+    position: absolute;
+    top: 15px;
+    left: -45px;
+    transform: rotate(-45deg);
+}
+
+#content .image img {
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+#content article:hover .image img {
+    transform: scale(1.1);
+}
+
+#content article h3 {
+    font-family: roya;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 8px 0 8px;
+    font-size: 16px;
+    /*height: px;*/
+    overflow: hidden;
+}
+
+#content .rate {
+    margin: 10px;
+    text-align: right;
+    color: black;
+    font-size: 14px;
+}
+
+#content .rate span:first-child {
+    background-color: blue;
+    padding: 3px 4px 1px 4px;
+    border-radius: 3px;
+    margin-left: 8px;
+    color: white;
+}
+
+#content .star {
+    height: 20px;
+    width: 20px;
+    vertical-align: -4px;
+    margin-left: 5px;
+}
+
+#content .price {
+    font-size: 22px;
+    color: #e22;
+    margin: 10px;
+}
+
+#content .buy {
+    display: block;
+    background-color: #49f;
+    color: white;
+    font-size: 20px;
+    line-height: 200%;
+}
+
+#content .buy:hover {
+    background-color: #24a;
+}
+#sidebar{
+    margin-top: 15px;
+}
+#sidebar .group{
+    background-color: white;
+    box-shadow: 0 1px 2px #ccc;
+    margin-bottom: 30px;
+}
+#sidebar .group h2{
+    background-color: #444444;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    line-height: 240%;
+}
+#sidebar article{
+    margin: 15px auto;
+    text-align: center;
+    max-width: 340px;
+    box-shadow: 0 0 0 1px #ddd;
+    position: relative;
+    overflow: hidden;
+}
+#sidebar article:hover{
+    box-shadow: 1px 1px 2px 3px #cccccc;
+}
+#sidebar .imageLabel{
+    background-color: red;
+    color: white;
+    width: 150px;
+    font-size: 18px;
+    opacity: 0.6;
+    position: absolute;
+    top: 25px;
+    left: -35px;
+    transform: rotate(-45deg);
+}
+#sidebar .discount{
+    background-color: red;
+    border-radius: 30px;
+    color: white;
+    opacity: 0.8;
+    width: 50px;
+    height: 38px;
+    padding-top: 12px;
+    font-size: 18px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+#sidebar article img{
+    width: 100%;
+    display: block;
+}
+#sidebar article .popup{
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+}
+#sidebar article .comment{
+    padding:5px;
+    height: 20px;
+    font-size: 16px;
+    overflow: hidden;
+    text-align: center;
+}
+#sidebar article .price{
+    color: yellow;
+    font-size: 22px;
+}
+#contact{
+    background-color: #667;
+    color: white;
+}
+#contact ul{
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#contact li{
+    padding:10px 30px;
+}
+#contact .mail , #contact .phone{
+    direction:ltr;
+}
+#contact .mail img ,#contact .phone img{
+    width: 24px;
+    height:24px;
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+#details{
+    background-color: #222;
+    border-top: 3px solid darkorange;
+    padding:15px 0 30px 0;
+}
+#details h3{
+    color: white;
+    margin-top: 25px;
+    font-size: 20px;
+    text-align: center;
+    font-family: roya;
+}
+#details .about{
+    text-align: right;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555;
+}
+#details p{
+    color: #999;
+    text-align: justify;
+    font-size: 14px;
+}
+#details li {
+    text-align: center;
+}
+#details a{
+    color: #999;
+    font-size: 14px;
+}
+#details a:hover{
+    color: #cef;
+}
+#copyright{
+    background-color: #111;
+}
+#copyright p{
+    color: #eee;
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0;
+}
+#copyright b{
+    color: white;
+}
+#copyright li img{
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+#copyright li{
+display: inline-block;
+    margin: 0 5px;
+}
+#copyright ul{
+    text-align: center;
+    margin-top: 10px;
+}
+#copyright li img:hover{
+    opacity: 0.6;
+}
+/* ----------------------------------*/
+
+@media screen and (min-width: 720px) {
+    #logo {
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
+/*------------------------------------*/
+@media screen and (min-width: 960px ) {
+    #button1, #button2 {
+        display: none;
+    }
+
+    #topmenu {
+        border-bottom: 4px solid #ff9637;
+        height: 50px;
+        position: static;
+    }
+
+    #topmenu ul {
+        display: flex !important;
+        position: static;
+        border: none;
+    }
+
+    #topmenu ul li:nth-child(3) {
+        margin-left: auto;
+    }
+
+    #topmenu a {
+        padding: 0 30px;
+        border: none;
+    }
+
+    #header {
+        padding-top: 0;
+    }
+
+    #cats {
+        position: static;
+        width: 100%;
+        border-bottom: 1px solid #444;
+        font-size: 15px;
+        background-color: cornsilk;
+    }
+
+    #cats .plus {
+        display: none;
+    }
+
+    #cats > ul {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    #cats .item {
+        float: right;
+    }
+
+    #cats a {
+        padding: 0 15px;
+        font-size: 15px;
+        font-family: roya;
+        font-weight: bold;
+    }
+
+    #cats li:hover {
+        background-color: white;
+    }
+
+    #cats a:hover {
+        background-color: transparent;
+    }
+
+    #cats li:hover > ul {
+        display: block !important;
+    }
+
+    #cats .subMenu {
+        width: 200px;
+        position: absolute;
+        border: 1px solid #ddd;
+        border-top: 0;
+        box-shadow: -1px 1px 4px gray;
+        background-color: #fce564;
+        z-index: 1;
+        line-height: 240%;
+    }
+
+    #cats .subItem {
+        position: relative;
+        /*border-top: 1px solid black;*/
+    }
+
+    #cats .subMenu .subMenu {
+        top: 1px;
+        right: 100%;
+        background-color: coral;
+    }
+
+    #cats .subItem a {
+        padding: 0 15px !important;
+    }
+    #topmenu ul{
+        background-color: transparent;
+    }
+    #sidebar article .comment{
+        font-size: 15px;
+    }
+    #sidebar article .price{
+        font-size: 20px;
+    }
+    #sidebar article .popup{
+        bottom: 100%;
+        right: 100%;
+        transition: 0.4s;
+        transform: scale(0.3);
+    }
+    #sidebar article:hover .popup{
+        bottom: 0;
+        right: 0;
+        transform: scale(1);
+    }
+    #copyright p{
+        font-size: 18px;
+    }
+}
+
+/*-------------------------------------*/
+@media screen and (min-width: 1140px) {
+    main > div {
+        display: flex;
+    }
+
+    main > div > div{
+        order: 2;
+    }
+}
